@@ -1,10 +1,10 @@
-# 🚗 Driver Drowsiness Detection — Raspberry Pi 4
+#  Driver Drowsiness Detection — Raspberry Pi 4
 
 Real-time driver drowsiness detection system running on Raspberry Pi 4. Detects fatigue using eye blink rate (EAR), head pose estimation and PERCLOS analysis via MediaPipe, with a TFLite model for eye state classification.
 
 ---
 
-## 📋 Features
+##  Features
 
 - **EAR (Eye Aspect Ratio)** — detects eye closure via facial landmarks
 - **PERCLOS** — measures percentage of eye closure over a 10-second window
@@ -18,7 +18,7 @@ Real-time driver drowsiness detection system running on Raspberry Pi 4. Detects 
 
 ---
 
-## 🔧 Hardware Requirements
+##  Hardware Requirements
 
 | Component | Details |
 |---|---|
@@ -30,7 +30,7 @@ Real-time driver drowsiness detection system running on Raspberry Pi 4. Detects 
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 yorgunluk_tespiti_pi/
@@ -50,7 +50,7 @@ yorgunluk_tespiti_pi/
 
 ---
 
-## ⚙️ Installation
+##  Installation
 
 ### Prerequisites
 
@@ -81,7 +81,7 @@ The setup script handles:
 
 ---
 
-## ▶️ Usage
+##  Usage
 
 ```bash
 conda activate proje_ortami
@@ -105,21 +105,21 @@ sudo systemctl start yorgunluk.service
 
 ---
 
-## 🚦 Alert System
+##  Alert System
 
 | LED State | Meaning |
 |---|---|
-| 🟢 Green solid | Driver is alert — normal |
-| 🟡 Yellow solid | No face detected or head turned |
-| 🟡 Yellow + Green | EAR unreliable (head angle too high) |
-| 🔴 Red solid | Drowsiness detected (PERCLOS threshold exceeded) |
-| 🔴 Red blinking | Critical — head drop detected |
+|  Green solid | Driver is alert — normal |
+|  Yellow solid | No face detected or head turned |
+|  Yellow + Green | EAR unreliable (head angle too high) |
+|  Red solid | Drowsiness detected (PERCLOS threshold exceeded) |
+|  Red blinking | Critical — head drop detected |
 
 Buzzer beeps slowly on drowsiness detection, continuously on head drop.
 
 ---
 
-## 📦 Key Dependencies
+##  Key Dependencies
 
 | Package | Version | Purpose |
 |---|---|---|
@@ -133,12 +133,12 @@ Buzzer beeps slowly on drowsiness detection, continuously on head drop.
 
 ---
 
-## 📷 Camera Architecture
+##  Camera Architecture
 
 The camera uses `picamera2` (libcamera) which requires the system Python (`/usr/bin/python3`). A subprocess server (`camera_server.py`) streams raw frames to the main application via stdout, allowing the conda environment to consume frames without libcamera compatibility issues.
 
 ---
 
-## 📄 License
+##  License
 
 MIT License
