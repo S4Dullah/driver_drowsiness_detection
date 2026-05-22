@@ -1,0 +1,33 @@
+# ============================================================
+# Yorgunluk Tespiti Pi — .gitignore
+# ============================================================
+
+# Miniforge kurulum dosyası (89 MB — GitHub'a atma)
+Miniforge3-Linux-aarch64.sh
+
+# Python geçici dosyaları
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Log dosyaları
+*.log
+camera_server.log
+
+# Ortam ve IDE dosyaları
+.env
+.venv/
+venv/
+.idea/
+.vscode/
+
+# Conda ortamı (Pi'da yeniden kurulur, burada tutulmasın)
+envs/
+
+# OS dosyaları
+.DS_Store
+Thumbs.db
+
+# Claude ayar dosyaları (isteğe bağlı — paylaşmak istemiyorsan)
+.claude/

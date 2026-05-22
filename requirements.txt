@@ -1,0 +1,43 @@
+# ============================================================
+# Raspberry Pi 4 — Python 3.10.20 (conda: proje_ortami)
+# pip ile kurulabilen paketler
+# ============================================================
+# KURULUM: setup_pi.sh çalıştırın (picamera2, gpiozero ve
+#           sistem bağımlılıklarını otomatik halleder)
+# ============================================================
+
+# Görüntü işleme
+# NOT: opencv-python AYRICA kurmayin — contrib zaten kapsar, çakişma yapar
+opencv-contrib-python==4.11.0.86
+
+# Yüz landmark tespiti
+mediapipe==0.10.9
+
+# Sayısal işlem (mediapipe 0.10.9 → numpy <2.0 şart)
+numpy==1.24.3
+
+# AI çıkarım motoru (aarch64 / Pi 4 için)
+tflite-runtime==2.13.0
+
+# mediapipe bağımlılıkları — versiyon aralığı kritik
+protobuf==3.20.3
+absl-py==2.4.0
+attrs==26.1.0
+
+# Sistem bağlantı katmanı
+cffi==2.0.0
+pycparser==3.0
+
+# tflite-runtime için (>=23.5.26 gerekli; 20181003210633 eski)
+flatbuffers>=23.5.26
+
+# Kamera: picamera2 sistem Python'u (3.13) üzerinden subprocess ile kullanılıyor.
+# Bu conda ortamına KURMAYIN — camera_server.py /usr/bin/python3 ile çalışır.
+# Hata ayıklama: yorgunluk_tespiti/camera_server.log dosyasına yazılır.
+
+# GPIO kontrolü — pip ile kurulur ama lgpio sistem paketi şart
+gpiozero>=2.0
+lgpio
+
+# Ses çıkışı (buzzer hazırlığı — libportaudio2 sistem paketi şart)
+sounddevice==0.5.5
